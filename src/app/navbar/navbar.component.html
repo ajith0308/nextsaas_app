@@ -1,69 +1,52 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">Tamil by </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-      (click)="isCollapsed = !isCollapsed"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div
-      class="collapse navbar-collapse"
-      id="navbarNav"
-      [ngbCollapse]="isCollapsed"
-    >
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a
-            class="nav-link"
-            routerLink="/home"
-            routerLinkActive="active"
-            [routerLinkActiveOptions]="{ exact: true }"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/products" routerLinkActive="active"
-            >Products</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/about" routerLinkActive="active"
-            >About</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/contact" routerLinkActive="active"
-            >Contact</a
-          >
-        </li>
-      </ul>
-      @if (isHomePage==true) {
-      <form class="d-flex" role="search">
+<nav class="navbar navbar-expand-lg bg-white shadow-sm">
+  <div class="container-fluid d-flex justify-content-between align-items-center">
+    <!-- Logo -->
+    <a class="navbar-brand fw-bold text-dark" routerLink="/">T-Buy</a>
+
+    <!-- Search Bar (Centered) -->
+    <div class="d-flex flex-grow-1 justify-content-center">
+      <form class="d-flex search-bar">
         <input
-          class="form-control me-2"
+          class="form-control search-input"
           type="search"
-          placeholder="Search"
+          placeholder="Search .."
           aria-label="Search"
           [(ngModel)]="searchTerm"
           (input)="onSearchTermChange($event)"
         />
-        <button class="btn btn-outline-success" type="submit">Search</button>
+        <button class="btn btn-light search-btn" type="submit">
+          <i class="bi bi-search"></i> <!-- Search Icon -->
+        </button>
       </form>
-      }
-      <ul class="navbar-nav">
+    </div>
+
+    <!-- Navigation Items + Cart -->
+    <div class="d-flex align-items-center">
+      <ul class="navbar-nav d-flex flex-row gap-3">
         <li class="nav-item">
-          <a class="nav-link" routerLink="/cart" routerLinkActive="active">
-            <i class="bi bi-cart"></i> Cart
-            <span class="badge bg-dark text-warning rounded-pill ms-1">{{
-              cartItems.length
-            }}</span>
+          <a class="nav-link text-dark" routerLink="/products">
+            <i class="bi bi-box-seam"></i> Products
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" routerLink="/about">
+            <i class="bi bi-info-circle"></i> About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-dark" routerLink="/contact">
+            <i class="bi bi-envelope"></i> Contact
+          </a>
+        </li>
+        <!-- Cart -->
+        <li class="nav-item position-relative">
+          <a class="nav-link text-dark" routerLink="/cart">
+            <i class="bi bi-cart fs-5"></i> <!-- Cart Icon -->
+            <span
+              class="badge bg-danger position-absolute top-0 start-100 translate-middle rounded-pill"
+              *ngIf="cartItems.length > 0"
+              >{{ cartItems.length }}</span
+            >
           </a>
         </li>
       </ul>

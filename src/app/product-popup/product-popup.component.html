@@ -1,13 +1,16 @@
-<div class="product-popup" *ngIf="product">
-    <div class="popup-content">
-      <button class="close-button" (click)="handleClose()">&times;</button>
-      <div class="d-flex justify-content-center">
+<div class="product-popup-overlay" *ngIf="product" (click)="handleClose()">
+  <div class="popup-content" (click)="$event.stopPropagation()">
+    <button class="close-button" (click)="handleClose()">×</button>
+    <div class="popup-body">
+      <div class="video-container">
         <img [src]="product.imageUrl" alt="{{ product.name }}" class="product-image">
       </div>
+      
       <div class="product-details">
-        <h2>{{ product.name }}</h2>
-        <p>{{ product.description }}</p>
+        <h2 class="product-title">{{ product.name }}</h2>
+        <p class="product-description">{{ product.description }}</p>
         <span class="product-price">${{ product.price.toFixed(2) }}</span>
+
         <div class="action-buttons">
           <button class="btn btn-primary" (click)="addToCart(product)">Add to Cart</button>
           <button class="btn btn-secondary">Buy Now</button>
@@ -15,3 +18,4 @@
       </div>
     </div>
   </div>
+</div>
