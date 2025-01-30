@@ -1,0 +1,28 @@
+<div class="login-container">
+  <div class="login-box">
+    <img src="nextcs.jpg" alt="Logo" class="logo" />
+    <h2>By What you Think</h2>
+    <button class="btn google-login" (click)="googleLogin()">
+      <img src="google.jpg" alt="Google" />
+      Continue with Google
+    </button>
+    <button class="btn google-login">
+      <img src="fb.png" alt="fb" />
+      Continue with Facebook
+    </button>
+    <div class="divider">
+      <span>or</span>
+    </div>
+    <form>
+      <input type="email" placeholder="Email address or username" class="input-field" />
+      <button type="submit" class="btn primary-btn">Continue</button>
+      <div class="checkbox-container">
+        <input type="checkbox" id="remember-me" />
+        <label for="remember-me">Remember me for 30 days</label>
+      </div>
+    </form>
+    <p>
+      Don’t have an account? <a href="register">Create account</a>
+    </p>
+  </div>
+</div>

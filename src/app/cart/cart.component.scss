@@ -1,0 +1,42 @@
+.empty-cart {
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+  }
+  
+  .table {
+    border-radius: 5px;
+    overflow: hidden; /* Prevent horizontal overflow for long product names */
+  }
+  
+//   .quantity-input {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 80px; /* Adjust width as needed */
+//   }
+  
+//   .quantity-input input {
+//     border: none;
+//     padding: 5px;
+//     text-align: center;
+//   }
+  
+  .checkout-section {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .checkout-section button {
+    width: 200px; /* Adjust button width as needed */
+  }
+  .quantity-input {
+    /* Adjust styles as needed, but ensure the input is visible */
+    display: flex; /* Ensure flexbox doesn't hide the input */
+  }
+  
+  .quantity-input input {
+    /* Remove any styles that hide the input */
+    border: 1px solid #ccc; /* Optional: Add a border for visibility */
+    padding: 5px;
+  }

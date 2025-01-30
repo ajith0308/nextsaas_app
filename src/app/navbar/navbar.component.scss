@@ -1,0 +1,36 @@
+/* In your component's SCSS file or a global styles.scss */
+.navbar {
+    padding: 0.5rem 1rem; // Reduced padding
+}
+
+.navbar-brand {
+  font-size: 1.5rem; /* Larger brand font size */
+}
+
+.nav-link {
+  padding: 0.5rem 1rem; /* Consistent link padding */
+}
+
+.nav-link.active {
+    background-color: rgba(0, 0, 0, 0.1); /* Subtle dark background for active link */
+    border-radius: 5px;
+}
+.navbar-toggler{
+    border: none;
+}
+.navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+.navbar-yellow {
+    background-color: #FFC107;
+  }
+  
+  .navbar-yellow .navbar-brand,
+  .navbar-yellow .nav-link {
+    color: #333; /* Dark text color */
+  }
+  body {
+    padding-top: 56px; /* Adjust based on navbar height */
+}
+  
+  /* ... other styles */
